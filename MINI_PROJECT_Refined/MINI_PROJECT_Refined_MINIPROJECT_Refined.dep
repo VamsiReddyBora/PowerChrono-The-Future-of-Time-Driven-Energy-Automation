@@ -1,0 +1,79 @@
+Dependencies for Project 'MINI_PROJECT_Refined', Target 'MINIPROJECT_Refined': (DO NOT MODIFY !)
+F (.\main.c)(0x69103A9B)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (main.h)(0x690F9D2F)
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
+I (pin_connect_block.h)(0x690D8A3F)
+I (types.h)(0x690D8A3E)
+I (pin_function_defines.h)(0x690D8A40)
+I (delay.h)(0x690D8A41)
+I (lcd_functions.h)(0x69109834)
+I (lcd_defines.h)(0x690DF799)
+I (rtc_functions.h)(0x690D8A42)
+I (eint_defines.h)(0x690D8A3F)
+I (eint_functions.h)(0x69102C7D)
+I (led.h)(0x690D8A41)
+I (keypad.h)(0x690D8A42)
+I (keymatrix.h)(0x690EF038)
+I (defines.h)(0x690D8A3F)
+F (.\pin_connect_block.c)(0x690D8A3F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\pin_connect_block.o --omf_browse .\pin_connect_block.crf --depend .\pin_connect_block.d)
+I (types.h)(0x690D8A3E)
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
+F (.\pin_connect_block.h)(0x690D8A3F)()
+F (.\pin_function_defines.h)(0x690D8A40)()
+F (.\Startup.s)(0x690D8A41)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\defines.h)(0x690D8A3F)()
+F (.\lcd.c)(0x6912C1A6)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\lcd.o --omf_browse .\lcd.crf --depend .\lcd.d)
+I (lcd_defines.h)(0x690DF799)
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
+I (delay.h)(0x690D8A41)
+I (types.h)(0x690D8A3E)
+I (lcd_functions.h)(0x69109834)
+I (defines.h)(0x690D8A3F)
+I (keymatrix.h)(0x690EF038)
+F (.\lcd_defines.h)(0x690DF799)()
+F (.\lcd_functions.h)(0x69109834)()
+F (.\delay.h)(0x690D8A41)()
+F (.\delay.c)(0x690D8A3F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\delay.o --omf_browse .\delay.crf --depend .\delay.d)
+I (delay.h)(0x690D8A41)
+I (types.h)(0x690D8A3E)
+F (.\keymatrix.c)(0x69109C9F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\keymatrix.o --omf_browse .\keymatrix.crf --depend .\keymatrix.d)
+I (keymatrix.h)(0x690EF038)
+I (defines.h)(0x690D8A3F)
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x532C1500)
+I (types.h)(0x690D8A3E)
+I (delay.h)(0x690D8A41)
+F (.\led.c)(0x6910B416)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
+I (defines.h)(0x690D8A3F)
+I (led.h)(0x690D8A41)
+I (lcd_functions.h)(0x69109834)
+I (types.h)(0x690D8A3E)
+I (lcd_defines.h)(0x690DF799)
+I (delay.h)(0x690D8A41)
+F (.\rtc_functions.h)(0x690D8A42)()
+F (.\rtc_defines.h)(0x690D8A3E)()
+F (.\rtc.c)(0x69109998)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\rtc.o --omf_browse .\rtc.crf --depend .\rtc.d)
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x532C1500)
+I (rtc_defines.h)(0x690D8A3E)
+I (types.h)(0x690D8A3E)
+I (lcd_defines.h)(0x690DF799)
+I (delay.h)(0x690D8A41)
+I (lcd_functions.h)(0x69109834)
+F (.\eint.c)(0x69102C7D)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\eint.o --omf_browse .\eint.crf --depend .\eint.d)
+I (main.h)(0x690F9D2F)
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
+I (pin_connect_block.h)(0x690D8A3F)
+I (types.h)(0x690D8A3E)
+I (pin_function_defines.h)(0x690D8A40)
+I (delay.h)(0x690D8A41)
+I (lcd_functions.h)(0x69109834)
+I (lcd_defines.h)(0x690DF799)
+I (rtc_functions.h)(0x690D8A42)
+I (eint_defines.h)(0x690D8A3F)
+I (eint_functions.h)(0x69102C7D)
+I (led.h)(0x690D8A41)
+I (keypad.h)(0x690D8A42)
+I (keymatrix.h)(0x690EF038)
+I (defines.h)(0x690D8A3F)
+F (.\eint_defines.h)(0x690D8A3F)()
+F (.\eint_functions.h)(0x69102C7D)()
