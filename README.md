@@ -1,5 +1,3 @@
-README – PowerChrono: RTC and Device ON/OFF Time Control
-
 Project Title:
 PowerChrono: The Future of Time-Driven Energy Automation 
 
