@@ -1,71 +1,0 @@
-Dependencies for Project 'MINI_PROJECT', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x6906EB0F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (main.h)(0x69066F64)
-I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
-I (pin_connect_block.h)(0x69020031)
-I (types.h)(0x68BECADA)
-I (pin_function_defines.h)(0x6901EE8B)
-I (delay.h)(0x6901EF87)
-I (lcd_functions.h)(0x6906EB0F)
-I (lcd_defines.h)(0x690465CA)
-I (rtc_functions.h)(0x6906E89C)
-I (eint_defines.h)(0x69038742)
-I (eint_functions.h)(0x69038742)
-I (led.h)(0x69049E6D)
-I (keypad.h)(0x6904C883)
-I (keymatrix.h)(0x6906EB7E)
-I (defines.h)(0x69062610)
-F (.\pin_connect_block.c)(0x69071C39)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\pin_connect_block.o --omf_browse .\pin_connect_block.crf --depend .\pin_connect_block.d)
-I (types.h)(0x68BECADA)
-I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
-F (.\pin_connect_block.h)(0x69020031)()
-F (.\pin_function_defines.h)(0x6901EE8B)()
-F (.\Startup.s)(0x532C14EA)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\defines.h)(0x69062610)()
-F (.\lcd.c)(0x69071D3F)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\lcd.o --omf_browse .\lcd.crf --depend .\lcd.d)
-I (lcd_defines.h)(0x690465CA)
-I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
-I (delay.h)(0x6901EF87)
-I (types.h)(0x68BECADA)
-I (lcd_functions.h)(0x6906EB0F)
-I (defines.h)(0x69062610)
-I (keymatrix.h)(0x6906EB7E)
-F (.\lcd_defines.h)(0x690465CA)()
-F (.\lcd_functions.h)(0x6906EB0F)()
-F (.\delay.h)(0x6901EF87)()
-F (.\delay.c)(0x6901955A)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\delay.o --omf_browse .\delay.crf --depend .\delay.d)
-I (delay.h)(0x6901EF87)
-I (types.h)(0x68BECADA)
-F (.\keymatrix.c)(0x6906EB7E)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\keymatrix.o --omf_browse .\keymatrix.crf --depend .\keymatrix.d)
-I (keymatrix.h)(0x6906EB7E)
-I (defines.h)(0x69062610)
-I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x532C1500)
-I (types.h)(0x68BECADA)
-I (delay.h)(0x6901EF87)
-F (.\led.c)(0x6904BDE2)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\led.o --omf_browse .\led.crf --depend .\led.d)
-I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
-I (defines.h)(0x69062610)
-I (led.h)(0x69049E6D)
-I (lcd_functions.h)(0x6906EB0F)
-I (types.h)(0x68BECADA)
-I (lcd_defines.h)(0x690465CA)
-I (delay.h)(0x6901EF87)
-F (.\rtc_functions.h)(0x6906E89C)()
-F (.\rtc_defines.h)(0x69039D76)()
-F (.\rtc.c)(0x69071DA0)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\rtc.o --omf_browse .\rtc.crf --depend .\rtc.d)
-I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x532C1500)
-I (rtc_defines.h)(0x69039D76)
-I (types.h)(0x68BECADA)
-I (lcd_defines.h)(0x690465CA)
-I (delay.h)(0x6901EF87)
-I (lcd_functions.h)(0x6906EB0F)
-F (.\eint.c)(0x69071DFC)(-c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\eint.o --omf_browse .\eint.crf --depend .\eint.d)
-I (C:\Keil\ARM\Inc\Philips\LPC21xx.h)(0x532C1500)
-I (types.h)(0x68BECADA)
-I (pin_function_defines.h)(0x6901EE8B)
-I (pin_connect_block.h)(0x69020031)
-I (eint_defines.h)(0x69038742)
-I (eint_functions.h)(0x69038742)
-I (delay.h)(0x6901EF87)
-F (.\eint_defines.h)(0x69038742)()
-F (.\eint_functions.h)(0x69038742)()
