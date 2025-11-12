@@ -78,6 +78,12 @@
 >            down arrow   -      To Decrement the value
 <img width="395" height="160" alt="image" src="https://github.com/user-attachments/assets/e9fc3926-c8a0-4143-af4f-984a1bea5b40" />
 
+## Known Issues ⚠️
+1. When setting ON and OFF Times                                                                                                                                              
+   00:00 act as Starting of the Day for ON TIME, but                                                                                                                          
+   00:00 act as Ending of the Day for OFF TIME.                                                                                                                               
+2. The Year should be 2025. If you're trying to modify the year, you will be allowed to edit the year from (1 to 4095) but a WARNING message appears.
+
 ## Future Enhancements 💡
 1. Add support for multiple device control schedules.
 
