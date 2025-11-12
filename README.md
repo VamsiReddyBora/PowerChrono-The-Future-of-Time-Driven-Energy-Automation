@@ -1,69 +1,84 @@
-Project Title:
-PowerChrono: The Future of Time-Driven Energy Automation 
+# PowerChrono - The Future of Time-Driven Energy Automation 🚀
+### PowerChrono is an intelligent, time-based power management system designed to optimize energy usage in industrial environments. This embedded project automates electrical devices according to user-defined time schedules, reducing energy wastage and improving operational reliability.
 
-Microcontroller Used:
-LPC2129/LPC2148 (ARM7)
+## Features ✨
+1. Displays real-time clock (RTC) date and time on a 16x2 LCD.
 
-------------------------------------------------------------
-Project Overview:
-This project implements a Real-Time Clock (RTC) based timing control system with a unique navigation style for setting RTC time and Device ON/OFF times using a 4x4 matrix keypad and displaying information on a 16x2 LCD.
+2. Allows users to modify RTC settings easily using a 4x4 matrix keypad.
 
-The user can:
-- View and edit the RTC (Hours, Minutes, Seconds, Date, Month, Year).
-- Set Device ON and OFF times.
-- Navigate and modify values directly using arrow-based keypad inputs.
+3. Supports setting device ON and OFF times for automated control.
 
-------------------------------------------------------------
-Unique Navigation Style:
-Instead of numeric menu selection, arrow keys (A/B/C/D) from the keypad are used for intuitive control:
+4. Controls device operation based on programmed schedules.
 
-A / B → Navigate between fields (LEFT/RIGHT or UP/DOWN)
-C / D → Increment or decrement the selected value
-Changes reflect immediately on the LCD display (HH, MM, SS, etc.)
-LCD clearly indicates active fields using arrows (↑, ↓, ←, →)
+5. Multiple menu navigation styles for intuitive and flexible user interaction.
 
-Example LCD display during edit:
-HH
-00:00:01
-↑         ↓
+6. Real-time display and menu updates with input validation for error-free operation.
 
-or
+## Hardware Components ⚙️
+1. LPC2148 Microcontroller (ARM7-based)
 
-B/A TO NAVIGATE
-C/D TO INCREMENT
+2. 16x2 LCD Display (HD44780)
 
-------------------------------------------------------------
-Connected Components:
-- 16x2 LCD Display (LM016L) for showing RTC and menu.
-- 4x4 Matrix Keypad for user input and navigation.
-- LED (Device) to represent ON/OFF operation.
-- Pull-up resistors used for stable input signals.
+3. 4x4 Matrix Keypad
 
-------------------------------------------------------------
+4. External Device (e.g., LED) for operation control
 
-Pin Connections (LPC2138):
+5. Switch for user interrupt input
 
-Peripheral       | Pins Used             | Description
-------------------------------------------------------------
-LCD (16x2)       | P0.0 – P0.7           | 8-bit LCD interface
-Keypad Rows      | P1.20 – P1.23         | Output to keypad rows
-Keypad Columns   | P1.24 – P1.27         | Input from keypad columns
-LED Device       | P1.18                 | Output LED indicating ON/OFF state
-Interrupt Switch | P0.16 (EINT1)         | Used to trigger menu for editing time
-Power            | VDD = 3.3V            | Supplied to LPC2138 and LCD
-RTC VBAT         | 3.3V                  | RTC backup power
-ON/OFF Switch    | P0.14                 | To see the ON/OFF Times
-------------------------------------------------------------
-Working Flow:
-1. The system continuously reads RTC values and displays them on the LCD.
-2. When the switch (connected to P0.16) is pressed, the edit menu appears.
-3. Using the keypad navigation, user can:
-   - Edit RTC information.
-   - Set Device ON/OFF times.
-4. The LED automatically turns ON at the programmed ON time and OFF at the OFF time.
+6. USB-UART Converter and DB-9 Cable for serial communication
 
-------------------------------------------------------------
-Software Used:
-- Embedded C (Keil uVision)
-- Flash Magic (Programming Tool)
-- Proteus 8 (Simulation)
+## Pin Configuration 📌
+
+Signal	Port Pin	Description                                                                                                                                                 
+| Signal            | Port Pin          | Description               |
+| :---------------- | :---------------- | :------------------------ |
+| LCD RS            | P0.9              |                          |
+| LCD E             | P0.8              |                          |
+| LCD Data Pins     | P0.7 - P0.7       |                          |
+| Keypad Rows       | P1.20 - P1.23     |                          |
+| Keypad Columns    | P1.24 - P1.27     |                          |
+| LED Device        | P1.18             |                          |
+| RTC Interrupt Pin | P0.16             |                          |
+| Switch Input      | P0.14             |                          |                                                                                                                                          
+
+## Software 🧩
+Written in Embedded C for LPC2148 microcontroller.
+
+Uses Flash Magic for flashing the code.
+
+Implements timer interrupts and GPIO interrupts for real-time system control.
+
+Matrix keypad scanning and LCD interfacing libraries.
+
+Modular menu-driven design for RTC and device timing configuration.
+
+User Guide 📋
+Power on the system.
+
+The current date and time display on the LCD.
+
+Press the configured switch to enter the menu.
+
+Use the keypad to navigate and edit RTC info or device ON/OFF schedules.
+
+Confirm inputs; invalid entries prompt re-entry.
+
+Exit menu to return to normal operation with updated settings.
+
+Screenshots & Images 📸
+Add your images here
+
+![Project Hardware](
+
+Caption describing hardware setup
+
+![LCD Menu Interface](
+
+Caption describing menu system
+
+Future Enhancements 💡
+Add support for multiple device control schedules.
+
+Integrate with wireless communication for remote management.
+
+Implement power consumption analytics and logging.
