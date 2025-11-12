@@ -1,0 +1,14 @@
+.\lcd.o: lcd.c
+.\lcd.o: lcd_defines.h
+.\lcd.o: C:\Keil\ARM\Inc\Philips\LPC21xx.h
+.\lcd.o: delay.h
+.\lcd.o: types.h
+.\lcd.o: lcd_functions.h
+.\lcd.o: types.h
+.\lcd.o: types.h
+.\lcd.o: delay.h
+.\lcd.o: types.h
+.\lcd.o: defines.h
+.\lcd.o: keymatrix.h
+.\lcd.o: defines.h
+.\lcd.o: types.h
