@@ -29,56 +29,58 @@
 
 ## Pin Configuration 📌
 
-Signal	Port Pin	Description                                                                                                                                                 
-| Signal            | Port Pin          | Description               |
-| :---------------- | :---------------- | :------------------------ |
-| LCD RS            | P0.9              |                          |
-| LCD E             | P0.8              |                          |
-| LCD Data Pins     | P0.7 - P0.7       |                          |
-| Keypad Rows       | P1.20 - P1.23     |                          |
-| Keypad Columns    | P1.24 - P1.27     |                          |
-| LED Device        | P1.18             |                          |
-| RTC Interrupt Pin | P0.16             |                          |
-| Switch Input      | P0.14             |                          |                                                                                                                                          
+| Signal            | Port Pin          | Description                                                      |
+| :---------------- | :---------------- | :---------------------------------------------------------------|
+| LCD RS            | P0.9              | Register Select pin: selects command (0) or data (1) register   |
+| LCD E             | P0.8              | Enable pin: latches data into LCD on high-to-low transition     |
+| LCD Data Pins     | P0.7 - P0.7       | Data bus lines for sending commands or data to the LCD          |
+| Keypad Rows       | P1.20 - P1.23     | Rows of the 4x4 matrix keypad, scanned for key detection        |
+| Keypad Columns    | P1.24 - P1.27     | Columns of the 4x4 matrix keypad, scanned for key detection     |
+| LED Device        | P1.18             | Output pin controlling device (e.g., LED) state ON/OFF          |
+| RTC Interrupt Pin | P0.16             | Input pin for Real-Time Clock interrupt signaling                |
+| Switch Input      | P0.14             | Input pin connected to a user switch to see ON/OFF Times  |
+                                                                                                                                          
 
 ## Software 🧩
-Written in Embedded C for LPC2148 microcontroller.
+1. Written in Embedded C for LPC2148 microcontroller.
 
-Uses Flash Magic for flashing the code.
+2. Uses Flash Magic for flashing the code.
 
-Implements timer interrupts and GPIO interrupts for real-time system control.
+3. Implements timer interrupts and GPIO interrupts for real-time system control.
 
-Matrix keypad scanning and LCD interfacing libraries.
+4. Matrix keypad scanning and LCD interfacing libraries.
 
-Modular menu-driven design for RTC and device timing configuration.
 
-User Guide 📋
-Power on the system.
+## User Guide 📋
+1. Power on the system.
 
-The current date and time display on the LCD.
+2. The current date and time display on the LCD.
 
-Press the configured switch to enter the menu.
+3. Press the configured switch to enter the menu.
 
-Use the keypad to navigate and edit RTC info or device ON/OFF schedules.
+4. Use the keypad to navigate and edit RTC info or device ON/OFF schedules.
 
-Confirm inputs; invalid entries prompt re-entry.
+5. Confirm inputs; invalid entries prompt re-entry.
 
-Exit menu to return to normal operation with updated settings.
+6. Exit menu to return to normal operation with updated settings.
 
-Screenshots & Images 📸
-Add your images here
+## Screenshots & Images 📸
+### Overall Proteus Setup
+<img width="1007" height="763" alt="image" src="https://github.com/user-attachments/assets/26b7024e-e38f-4bd3-9e25-9f68508bf761" />
 
-![Project Hardware](
+### Home Screen
+<img width="394" height="161" alt="image" src="https://github.com/user-attachments/assets/7713f46b-0dae-46aa-8f1b-72ae0fe9c7e5" />
 
-Caption describing hardware setup
+### Editing Menu Style
+>            >            -      To move Right (between HH:MM:SS)
+>            <            -      To move Left (between HH:MM:SS)
+>            up arrow     -      To Increment the value
+>            down arrow   -      To Decrement the value
+<img width="395" height="160" alt="image" src="https://github.com/user-attachments/assets/e9fc3926-c8a0-4143-af4f-984a1bea5b40" />
 
-![LCD Menu Interface](
+## Future Enhancements 💡
+1. Add support for multiple device control schedules.
 
-Caption describing menu system
+2. Integrate with wireless communication for remote management.
 
-Future Enhancements 💡
-Add support for multiple device control schedules.
-
-Integrate with wireless communication for remote management.
-
-Implement power consumption analytics and logging.
+3. Implement power consumption analytics and logging.
