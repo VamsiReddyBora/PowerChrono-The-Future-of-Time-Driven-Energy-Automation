@@ -1,92 +1,130 @@
-# PowerChrono - The Future of Time-Driven Energy Automation 🚀
-### PowerChrono is an intelligent, time-based power management system designed to optimize energy usage in industrial environments. This embedded project automates electrical devices according to user-defined time schedules, reducing energy wastage and improving operational reliability.
+# ⚡ **PowerChrono – Smart Time-Driven Energy Automation System**
 
-## Features ✨
-1. Displays real-time clock (RTC) date and time on a 16x2 LCD.
+A next-generation, RTC-powered embedded system designed to **automate electrical devices based on precise time schedules**, ensuring **energy efficiency**, **industrial reliability**, and **intuitive user interaction**.
 
-2. Allows users to modify RTC settings easily using a 4x4 matrix keypad.
+---
 
-3. Supports setting device ON and OFF times for automated control.
+## ✨ Features
+- ⏱️ **Real-Time Clock Display**  
+  Shows accurate date and time on a 16×2 LCD using the on-chip RTC.
 
-4. Controls device operation based on programmed schedules.
+- 🛠️ **Easy RTC Configuration**  
+  A 4×4 keypad allows quick editing of hours, minutes, seconds, date, month, and year.
 
-5. Multiple menu navigation styles for intuitive and flexible user interaction.
+- 🔌 **Automated Device ON/OFF Scheduling**  
+  Users can set ON and OFF times for any connected device, enabling fully automated operation.
 
-6. Real-time display and menu updates with input validation for error-free operation.
+- 🧭 **Multiple Menu Navigation Styles**  
+  Supports intuitive movement between fields, validation prompts, and live display updates.
 
-## Hardware Components ⚙️
-1. LPC2148 Microcontroller (ARM7-based)
+- ⚡ **Real-Time Control Execution**  
+  Devices toggle automatically when the RTC matches the user-programmed timestamps.
 
-2. 16x2 LCD Display (HD44780)
+- ❗ **Error-Free Operation**  
+  Input validation ensures time formats and values are always correct.
 
-3. 4x4 Matrix Keypad
+---
 
-4. External Device (e.g., LED) for operation control
+## 🛠️ Hardware Components
+- **LPC2148 (ARM7) Microcontroller**  
+- **16×2 HD44780-Based LCD Module**  
+- **4×4 Matrix Keypad**  
+- **External Device (LED / Load) for Control Demonstration**  
+- **User Switch for Interrupt-Based Navigation**  
+- **USB-UART Converter + DB-9 Cable (Programming/Debugging)**  
 
-5. Switch for user interrupt input
+---
 
-6. USB-UART Converter and DB-9 Cable for serial communication
+## 📌 Pin Configuration
 
-## Pin Configuration 📌
+| **Signal**          | **Pin**        | **Description**                                   |
+|---------------------|----------------|---------------------------------------------------|
+| LCD RS              | P0.9           | Selects LCD command/data mode                     |
+| LCD EN              | P0.8           | Latches LCD data on falling edge                  |
+| LCD Data            | P0.0 – P0.7    | 8-bit LCD parallel data bus                       |
+| Keypad Rows         | P1.20 – P1.23  | Row scanning inputs                               |
+| Keypad Columns      | P1.24 – P1.27  | Column scanning inputs                            |
+| Device Output (LED) | P1.18          | Used to toggle ON/OFF device                      |
+| Interrupt           | P0.16          | External Interrupt 0 (EINT0)                      |
+| User Switch         | P0.14          | View ON/OFF schedule                              |
 
-| Signal            | Port Pin          | Description                                                      |
-| :---------------- | :---------------- | :---------------------------------------------------------------|
-| LCD RS            | P0.9              | Register Select pin: selects command (0) or data (1) register   |
-| LCD E             | P0.8              | Enable pin: latches data into LCD on high-to-low transition     |
-| LCD Data Pins     | P0.7 - P0.7       | Data bus lines for sending commands or data to the LCD          |
-| Keypad Rows       | P1.20 - P1.23     | Rows of the 4x4 matrix keypad, scanned for key detection        |
-| Keypad Columns    | P1.24 - P1.27     | Columns of the 4x4 matrix keypad, scanned for key detection     |
-| LED Device        | P1.18             | Output pin controlling device (e.g., LED) state ON/OFF          |
-| RTC Interrupt Pin | P0.16             | Input pin for Real-Time Clock interrupt signaling                |
-| Switch Input      | P0.14             | Input pin connected to a user switch to see ON/OFF Times  |
-                                                                                                                                          
+---
 
-## Software 🧩
-1. Written in Embedded C for LPC2148 microcontroller.
+## 🧩 Software Overview
+- Entire firmware written in **Embedded C** for ARM7 (LPC2148).  
+- Programmed using **Flash Magic** via UART.  
+- Implements:
+  - Interrupts  
+  - External GPIO interrupts  
+  - Keypad scanning  
+  - LCD command/data routines  
+  - RTC read/write functions  
+  - Scheduling logic  
 
-2. Uses Flash Magic for flashing the code.
+---
 
-3. Implements timer interrupts and GPIO interrupts for real-time system control.
+## 🧭 User Guide
 
-4. Matrix keypad scanning and LCD interfacing libraries.
+1. Power on the system — the LCD shows **Date & Time**.  
+2. Press the configured **menu switch(Interrupt)** to enter settings.  
+3. Use the keypad to edit:  
+   - RTC Time (HH:MM:SS)  
+   - RTC Date (DD/MM/YYYY)  
+   - Device ON Time  
+   - Device OFF Time  
+4. Navigation controls:  
+   - **“>”** → Move Right  
+   - **“<”** → Move Left  
+   - **↑** → Increment  
+   - **↓** → Decrement  
+5. Confirm inputs — invalid entries trigger warnings.  
+6. Exit to return to normal running mode with updated parameters.
 
+---
 
-## User Guide 📋
-1. Power on the system.
+## 📸 Screenshots
 
-2. The current date and time display on the LCD.
+### 🖥️ Full Proteus Setup  
+<img width="1298" height="915" alt="image" src="https://github.com/user-attachments/assets/58901025-2568-4f2d-a4bd-8207e581b6be" />
 
-3. Press the configured switch to enter the menu.
+### ⌚ Main Menu  
+<img width="1644" height="664" alt="image" src="https://github.com/user-attachments/assets/42e1fd7b-1843-4ed3-8aab-427b7d384dba" />
 
-4. Use the keypad to navigate and edit RTC info or device ON/OFF schedules.
+### ✏️ Editing Menu (Time Configuration)
+> **Right ( > )** → Move between HH • MM • SS  
+>  
+> **Left ( < )** → Move backward  
+>  
+> **↑** → Increase value  
+>  
+> **↓** → Decrease value  
 
-5. Confirm inputs; invalid entries prompt re-entry.
+<img width="1613" height="651" alt="image" src="https://github.com/user-attachments/assets/3d7bb0a1-1cdf-4bf0-aeed-37cc0db67e3c" />
 
-6. Exit menu to return to normal operation with updated settings.
+---
 
-## Screenshots & Images 📸
-### Overall Proteus Setup
-<img width="1007" height="763" alt="image" src="https://github.com/user-attachments/assets/26b7024e-e38f-4bd3-9e25-9f68508bf761" />
+## ⚠️ Known Issues
+- Setting ON/OFF Time at **00:00** behaves differently:  
+  - As **Day Start** for ON Time  
+  - As **Day End** for OFF Time  
 
-### Home Screen
-<img width="394" height="161" alt="image" src="https://github.com/user-attachments/assets/7713f46b-0dae-46aa-8f1b-72ae0fe9c7e5" />
+- Year field supports **1–4095**, but only **2025** is accepted for correct operation  
+  (Warning message alerts the user during editing).
 
-### Editing Menu Style
->            >            -      To move Right (between HH:MM:SS)
->            <            -      To move Left (between HH:MM:SS)
->            up arrow     -      To Increment the value
->            down arrow   -      To Decrement the value
-<img width="395" height="160" alt="image" src="https://github.com/user-attachments/assets/e9fc3926-c8a0-4143-af4f-984a1bea5b40" />
+---
 
-## Known Issues ⚠️
-1. When setting ON and OFF Times                                                                                                                                              
-   00:00 act as Starting of the Day for ON TIME, but                                                                                                                          
-   00:00 act as Ending of the Day for OFF TIME.                                                                                                                               
-2. The Year should be 2025. If you're trying to modify the year, you will be allowed to edit the year from (1 to 4095) but a WARNING message appears.
+## 💡 Future Enhancements
+- Multi-device scheduling  
+- Wireless control & monitoring  
+- Data logging & energy consumption analytics  
+- Backup memory for schedule storage  
+- OLED/Graphical display for advanced UI  
 
-## Future Enhancements 💡
-1. Add support for multiple device control schedules.
+---
 
-2. Integrate with wireless communication for remote management.
+## 👤 Author
+**Vamsi Reddy Bora**  
+Electronics Engineer  
+Developer of *PowerChrono – Time-Based Power Automation System*
 
-3. Implement power consumption analytics and logging.
+---
