@@ -1,4 +1,4 @@
-# ⚡ **PowerChrono: The Future of Time-Driven Energy Automation**
+# 🔌 **PowerChrono: The Future of Time-Driven Energy Automation**
 
 A next-generation, RTC-powered embedded system designed to **automate electrical devices based on precise time schedules**, ensuring **energy efficiency**, **industrial reliability**, and **intuitive user interaction**.
 
