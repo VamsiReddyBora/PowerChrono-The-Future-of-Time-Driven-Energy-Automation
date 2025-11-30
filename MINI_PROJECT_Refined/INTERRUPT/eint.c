@@ -6,6 +6,8 @@ extern ui32 device_on_min;
 extern ui32 device_off_min;
 extern ui32 device_on_sec;
 extern ui32 device_off_sec;
+extern ui32 IRQ_fired;
+extern ui32 interrupt_fired;
 
 void Eint_Init(void){
 	CfgPortPinFunc(0,16,PIN_FUNC2);
@@ -16,31 +18,25 @@ void Eint_Init(void){
 	IODIR1 |= 1<<EINT0_STATUS_LED;
 }
 
-/*void Eint_Init2(void){
-	CfgPortPinFunc(0,14,PIN_FUNC3);
-	VICIntEnable=1<<15;
-  VICVectCntl0 = (1<<5)| 15;
-	VICVectAddr0 = (ui32 ) eint0_isr2;
-	EXTMODE = 1<<0;
-	//IODIR1 |= 1<<EINT0_STATUS_LED;
-}*/
+void Eint_FIQ(){
+	PINSEL1 &= 0xCFFFFFFF; //Clearing p0.30 
+	PINSEL1 |= (2 << 28); // p0.30 as EINT3
+	EXTINT = 1 << 3; //Clearing Interrupt flag
+	VICIntEnable |= 1 << 17; // Enabling EINT0 
+	VICIntSelect |= 1 << 17; // Setting as FIQ type
+	EXTMODE |= (1 << 3); // Edge sensitive
+  EXTPOLAR &= ~(1 << 3); // Falling edge
+}
+
+void FIQ_ISR(void){
+	EXTINT = 1 << 3; //Clearing Interrupt Flag after fires
+	interrupt_fired  = 1; //means the interrupt fired, usefull in main program
+	COMMAND(CLEAR_LCD); //Clearing LCD Before going to HOME SCREEN
+	IRQ_fired = 0; //Must be cleared
+}
 
 void eint0_isr(void) __irq{
 	EXTINT = 1<<0;
 	VICVectAddr = 0;
-	//write what to do
-	//Eint_Init2();
-	edit();
-	//EXTINT = 1<<0;
-	//VICVectAddr = 0;
+	IRQ_fired = 1;
 }
-
-/*void eint0_isr2(void) __irq{
-	EXTINT = 1 << 0;
-	VICVectAddr = 0;
-	
-	PrintONTime(device_on_hour, device_on_min, device_on_sec);
-	PrintOFFTime(device_off_hour, device_off_min, device_off_sec);
-	delay_s(1);
-	COMMAND(CLEAR_LCD);
-}*/
