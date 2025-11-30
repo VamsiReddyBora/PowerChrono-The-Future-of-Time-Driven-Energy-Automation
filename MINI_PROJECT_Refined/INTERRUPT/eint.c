@@ -22,8 +22,8 @@ void Eint_FIQ(){
 	PINSEL1 &= 0xCFFFFFFF; //Clearing p0.30 
 	PINSEL1 |= (2 << 28); // p0.30 as EINT3
 	EXTINT = 1 << 3; //Clearing Interrupt flag
-	VICIntEnable |= 1 << 17; // Enabling EINT0 
-	VICIntSelect |= 1 << 17; // Setting as FIQ type
+	VICIntEnable |= 1 << EINT3_VIC_CHNO; // Enabling EINT3
+	VICIntSelect |= 1 << EINT3_VIC_CHNO; // Setting as FIQ type
 	EXTMODE |= (1 << 3); // Edge sensitive
   EXTPOLAR &= ~(1 << 3); // Falling edge
 }
