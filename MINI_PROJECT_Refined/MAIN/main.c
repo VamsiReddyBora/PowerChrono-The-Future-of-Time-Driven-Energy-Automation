@@ -2,6 +2,13 @@
 
 i16 hour,min,sec,date,month,year,day;
 ui32 current_time;
+
+//Interrupt related statements
+ui32 interrupt_fired = 0;  //Flag for FIQ
+ui32 IRQ_fired = 0;   // Flag for IRQ
+ui32 saved_address = 0;  //LR address of FIQ
+extern void FIQ_Return(void);  //The definition is in startup.s file
+
 ui32 longpress;// For Keypad Short + Long press action
 
 //Global variables for Device ON/OFF time settings
@@ -41,8 +48,10 @@ int main(){
 	LCD_Custom_Char(5, bell_icon_off); // Store the bell_icon_off at CGRAM position 5
 	
 	Eint_Init(); // External Interrupt 0 at p0.16
+	Eint_FIQ(); //External Interrupt 3 at p0.30
 	
 	while(1){
+		FIQ_Return();
 		//Displaying Time and date
 		FetchTime(&hour,&min,&sec); //Fetches Time from RTC Block
 		PrintTime(hour, min, sec); //Displaying Time info onto LCD Screen
@@ -62,6 +71,10 @@ int main(){
 		else{
 			Device_OFF();
 		}
+		
+		//If IRQ Fired then the menu will be displayed
+		if(IRQ_fired)
+			edit();
 		
 		//Switch configured to see ON/OFF Times on LCD Screen (p0.14)
 		if(!SW){
