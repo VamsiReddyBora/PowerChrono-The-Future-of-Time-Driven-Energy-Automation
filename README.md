@@ -46,7 +46,7 @@ A next-generation, RTC-powered embedded system designed to **automate electrical
 | Keypad Columns      | P1.24 – P1.27  | Column scanning inputs                            |
 | Device Output (LED) | P1.18          | Used to toggle ON/OFF device                      |
 | Interrupt           | P0.16          | External Interrupt 0 (EINT0)                      |
-| FIQ INterrupt       | P0.30          | Emergency Exit Button (EINT3)                     |
+| FIQ Interrupt       | P0.30          | Emergency Exit Button (EINT3)                     |
 | User Switch         | P0.14          | View ON/OFF schedule                              |
 
 ---
