@@ -260,7 +260,35 @@ SWI_Handler     B       SWI_Handler
 PAbt_Handler    B       PAbt_Handler
 DAbt_Handler    B       DAbt_Handler
 IRQ_Handler     B       IRQ_Handler
-FIQ_Handler     B       FIQ_Handler
+;FIQ_Handler     B       FIQ_Handler
+;FIQ_Handler     B       FIQ_ISR
+;				IMPORT 	FIQ_ISR
+
+;===========================================CUSTOM ADDRESS CODE===========================================================
+;Added Code by me
+                IMPORT  FIQ_ISR            ;FIQ_ISR imported from interrupt.c file
+				IMPORT	saved_address      ;the global variable "saved_address" is also imported
+				EXPORT 	FIQ_Return         ;Here we are writing the function definition in this file in assembly
+
+FIQ_Return                                 ;FIQ_Return body
+        LDR     R0, =saved_address         ;Here R0 = &saved_address (in C) like this happening
+        LDR     R1, [R0]                   ;R1 = *R0 (The content at the location in R0 will be stored in R1)
+        CMP     R1, #0                     ;Compare R1 content with 0 (means no address is saved before, if this is true)
+        BNE     skip                       ;if saved_address != 0, then go to skip
+        STR     LR, [R0]                   ;if above condition fails, then the LR content will saved into saved_address
+skip
+        BX      LR                         ;Function exits
+
+FIQ_Handler
+        STMFD   SP!, {R0-R3, LR}           
+        BL      FIQ_ISR					   ;FIQ_ISR calling
+        LDMFD   SP!, {R0-R3, LR}
+
+        LDR     R12, =saved_address        ;Here we are restoring the saved_address into R12 and then into PC
+        LDR     R12, [R12]
+        MOVS    PC, R12
+
+;================================================================================================================================
 
 
 ; Reset Handler
