@@ -1,9 +1,0 @@
-.\led.o: led.c
-.\led.o: C:\Keil\ARM\Inc\Philips\LPC21xx.h
-.\led.o: defines.h
-.\led.o: led.h
-.\led.o: lcd_functions.h
-.\led.o: types.h
-.\led.o: lcd_defines.h
-.\led.o: delay.h
-.\led.o: types.h
